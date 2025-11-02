@@ -32,7 +32,7 @@ Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma
 ## Como Usar
 
 ### Uso Online
-Acesse [https://seusite.com](https://seusite.com) e comece a gerar QR Codes instantaneamente.
+Acesse [https://openqrcodegenerator-dnqhb.ondigitalocean.app](https://openqrcodegenerator-dnqhb.ondigitalocean.app) e comece a gerar QR Codes instantaneamente.
 
 ### Instalação como App
 1. Acesse o site pelo seu navegador
