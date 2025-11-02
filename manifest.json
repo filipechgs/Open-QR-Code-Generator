@@ -1,6 +1,6 @@
 {
   "name": "Open QR Code Generator",
-  "short_name": "QR Code",
+  "short_name": "QR Gen",
   "description": "Gerador de QR Code gratuito e open source - Funciona offline",
   "start_url": "/",
   "display": "standalone",
