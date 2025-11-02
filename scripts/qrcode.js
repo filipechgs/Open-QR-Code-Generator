@@ -4,6 +4,22 @@ import QRCode from './qrcode-generetor.js';
 // QR Code Functions
 let currentQRCodeCanvas = null;
 
+// Get DOM elements
+const textInput = document.getElementById('textInput');
+const generateButton = document.getElementById('generateButton');
+const clearButton = document.getElementById('clearButton');
+const downloadButton = document.getElementById('downloadButton');
+const shareButton = document.getElementById('shareButton');
+const qrcodeContainer = document.getElementById('qrcodeContainer');
+const actionButtons = document.getElementById('actionButtons');
+const status = document.getElementById('status');
+
+// Add event listeners
+generateButton.addEventListener('click', generateQRCode);
+clearButton.addEventListener('click', clearQRCode);
+downloadButton.addEventListener('click', downloadQRCode);
+shareButton.addEventListener('click', shareQRCode);
+
 function generateQRCode() {
     const text = document.getElementById('textInput').value.trim();
     const qrcodeContainer = document.getElementById('qrcodeContainer');

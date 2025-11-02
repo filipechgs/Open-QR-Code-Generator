@@ -6,7 +6,7 @@
 
 Um gerador de QR Code totalmente gratuito, open source e sem anúncios, desenvolvido como prova de conceito de desenvolvimento colaborativo com IA.
 
-## 🚀 Sobre o Projeto
+## Sobre o Projeto
 
 Eu queria um gerador de QR Code que eu pudesse usar sem receio de ter os meus dados rastreados ou deturpados quando quisesse, por exemplo, transformar uma chave PIX "copia e cola" em um QR Code. Testei a geração do código com diversos chats de IA e obtive a melhor resposta combinando o Deepseek para o módulo de geração do QR Code, o Claude para o HTML e CSS, e Exceto por este parágrafo, o GitHub Copilot para o README.
 
@@ -20,7 +20,7 @@ Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma
 - ✅ Interface em Português e Inglês
 - ✅ Totalmente gratuito e sem anúncios
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **HTML5** + **CSS3** + **JavaScript Vanilla**
 - **ES Modules** para modularização
@@ -29,7 +29,7 @@ Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma
 - **Design Responsivo**
 - **Multi-idioma** (PT-BR/EN)
 
-## 📦 Como Usar
+## Como Usar
 
 ### Uso Online
 Acesse [https://seusite.com](https://seusite.com) e comece a gerar QR Codes instantaneamente.
@@ -39,7 +39,7 @@ Acesse [https://seusite.com](https://seusite.com) e comece a gerar QR Codes inst
 2. Clique em "Instalar como App" quando o prompt aparecer
 3. Use o app offline quando precisar
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 - **Geração Rápida**: QR Codes gerados instantaneamente
 - **Download**: Baixe os QR Codes em alta qualidade
@@ -48,24 +48,26 @@ Acesse [https://seusite.com](https://seusite.com) e comece a gerar QR Codes inst
 - **Responsivo**: Adapta-se a qualquer tamanho de tela
 - **Acessível**: Interface limpa e intuitiva
 
-## 🔧 Desenvolvimento
+## Desenvolvimento
 
 ### Estrutura do Projeto
 
 ```
-├── index.html               # Página principal da aplicação
-├── manifest.json           # Configurações do PWA
-├── sw.js                  # Service Worker para funcionalidade offline
-├── favicon/               # Ícones e assets do PWA
+├── index.html             # Página principal da aplicação
+├── manifest.json         # Configurações do PWA
+├── sw.js                # Service Worker para funcionalidade offline
+├── favicon/             # Ícones e assets do PWA
 │   ├── android-chrome-*.png
 │   ├── apple-touch-icon.png
 │   ├── favicon-*.png
 │   └── site.webmanifest
-└── scripts/               # JavaScript modular
+├── styles/              # Estilos CSS
+│   └── main.css        # Estilos principais da aplicação
+└── scripts/            # JavaScript modular
     ├── qrcode-generetor.js  # Implementação do gerador QR Code
-    ├── qrcode.js            # Interface de usuário do QR Code
-    ├── translations.js      # Sistema de internacionalização
-    └── pwa.js              # Configuração do PWA
+    ├── qrcode.js          # Interface de usuário do QR Code
+    ├── translations.js    # Sistema de internacionalização
+    └── pwa.js            # Configuração do PWA
 ```
 
 ### Desenvolvimento Local
@@ -81,11 +83,11 @@ python -m http.server 8000
 npx serve .
 ```
 
-## 🤖 Desenvolvimento com IA
+## Desenvolvimento com IA
 
 Este projeto foi desenvolvido como prova de conceito de colaboração entre diferentes modelos de IA:
 
-### 🧠 DeepSeek
+### DeepSeek
 
 Responsável por: Módulo completo de geração de QR Codes (qrcode-generetor.js)
 
@@ -96,7 +98,7 @@ Contribuição: Implementação do algoritmo de codificação QR desde os princ�
 - Padrões de máscara
 - Renderização do canvas
 
-### 🤖 Claude
+### Claude
 
 Responsável por: Interface web completa (index.html, demais scripts)
 
@@ -108,7 +110,7 @@ Contribuição: Desenvolvimento da PWA com:
 - Experiência de usuário otimizada
 - Modularização do código
 
-## 📄 Licença
+## Licença
 
 Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para detalhes.
 
@@ -119,11 +121,11 @@ Você pode:
 - ✅ Estudar e aprender com o código
 - ✅ Contribuir com melhorias
 
-## 🌟 Por que Open Source?
+## Por que Open Source?
 
 Acreditamos que ferramentas úteis devem ser acessíveis a todos. Este projeto demonstra que é possível criar aplicações completas e funcionais colaborando com IA, mantendo tudo transparente e livre.
 
-## 🤝 Contribuições
+## Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
 
@@ -132,6 +134,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 - Enviar pull requests
 - Melhorar a documentação
 
-## 📞 Contato
+## Contato
 
 Tem dúvidas ou sugestões? Abra uma issue ou entre em contato!
