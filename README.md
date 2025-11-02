@@ -8,7 +8,7 @@ Um gerador de QR Code totalmente gratuito, open source e sem anúncios, desenvol
 
 ## 🚀 Sobre o Projeto
 
-Eu queria um gerador de QR Code que eu pudesse usar sem receio de ter os meus dados rastreados ou deturpados quando quisesse, por exemplo, transformar uma chave PIX "copia e cola" em um QR Code. Testei a geração do código com diversos chats de IA e obtive a melhor resposta combinando o Deepseek para o módulo de geração do QR Code e o Claude para o HTML e CSS. Exceto por este parágrafo, todo o README foi escrito pelo ChatGPT.
+Eu queria um gerador de QR Code que eu pudesse usar sem receio de ter os meus dados rastreados ou deturpados quando quisesse, por exemplo, transformar uma chave PIX "copia e cola" em um QR Code. Testei a geração do código com diversos chats de IA e obtive a melhor resposta combinando o Deepseek para o módulo de geração do QR Code, o Claude para o HTML e CSS, e Exceto por este parágrafo, o GitHub Copilot para o README.
 
 Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma Progressive Web App (PWA), permitindo:
 
@@ -23,6 +23,7 @@ Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5** + **CSS3** + **JavaScript Vanilla**
+- **ES Modules** para modularização
 - **PWA** (Service Worker, Manifest)
 - **QR Code Generation** (implementação própria)
 - **Design Responsivo**
@@ -52,19 +53,29 @@ Acesse [https://seusite.com](https://seusite.com) e comece a gerar QR Codes inst
 ### Estrutura do Projeto
 
 ```
-├── index.html # Aplicação principal
-├── QRCode.mjs # Módulo de geração de QR Codes
-├── sw.js # Service Worker (PWA)
-├── manifest.json # Configurações do PWA
-└── README.md # Este arquivo
+├── index.html               # Página principal da aplicação
+├── manifest.json           # Configurações do PWA
+├── sw.js                  # Service Worker para funcionalidade offline
+├── favicon/               # Ícones e assets do PWA
+│   ├── android-chrome-*.png
+│   ├── apple-touch-icon.png
+│   ├── favicon-*.png
+│   └── site.webmanifest
+└── scripts/               # JavaScript modular
+    ├── qrcode-generetor.js  # Implementação do gerador QR Code
+    ├── qrcode.js            # Interface de usuário do QR Code
+    ├── translations.js      # Sistema de internacionalização
+    └── pwa.js              # Configuração do PWA
 ```
 
 ### Desenvolvimento Local
+
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/qrcode-generator.git
+git clone https://github.com/filipechgs/Open-QR-Code-Generator.git
 
 # Sirva os arquivos com um servidor local
+# É necessário um servidor devido ao uso de ES modules
 python -m http.server 8000
 # ou
 npx serve .
@@ -76,7 +87,7 @@ Este projeto foi desenvolvido como prova de conceito de colaboração entre dife
 
 ### 🧠 DeepSeek
 
-Responsável por: Módulo completo de geração de QR Codes (QRCode.js)
+Responsável por: Módulo completo de geração de QR Codes (qrcode-generetor.js)
 
 Contribuição: Implementação do algoritmo de codificação QR desde os princípios fundamentais, incluindo:
 
@@ -87,7 +98,7 @@ Contribuição: Implementação do algoritmo de codificação QR desde os princ�
 
 ### 🤖 Claude
 
-Responsável por: Interface web completa (index.html)
+Responsável por: Interface web completa (index.html, demais scripts)
 
 Contribuição: Desenvolvimento da PWA com:
 
@@ -95,6 +106,7 @@ Contribuição: Desenvolvimento da PWA com:
 - Sistema de multi-idioma
 - Funcionalidades de PWA
 - Experiência de usuário otimizada
+- Modularização do código
 
 ## 📄 Licença
 
