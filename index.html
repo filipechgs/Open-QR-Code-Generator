@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Open QR Code Generator - Gerador gratuito e open source">
-    
-    <!-- PWA Meta Tags -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Open QR Code Generator - Gerador gratuito e open source">
+
+    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><rect x='10' y='10' width='30' height='30' fill='%23fff'/><rect x='60' y='10' width='30' height='30' fill='%23fff'/><rect x='10' y='60' width='30' height='30' fill='%23fff'/></svg>">
+
+    <!-- Favicons (from favicon/ folder) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Open QR Code">
-    
+
+
     <title>Open QR Code Generator</title>
     <style>
         * {
@@ -20,7 +36,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #ffffff;
@@ -30,7 +46,7 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .container {
             max-width: 420px;
             margin: 0 auto;
@@ -39,26 +55,26 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding-top: 20px;
         }
-        
+
         .header h1 {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
-        
+
         .header p {
             font-size: 14px;
             color: #666;
             margin-bottom: 16px;
         }
-        
+
         .open-source {
             display: inline-flex;
             align-items: center;
@@ -71,21 +87,21 @@
             border-radius: 6px;
             transition: all 0.2s;
         }
-        
+
         .open-source:hover {
             background: #000;
             color: #fff;
         }
-        
+
         .open-source svg {
             width: 16px;
             height: 16px;
         }
-        
+
         .input-group {
             margin-bottom: 16px;
         }
-        
+
         .input-group input {
             width: 100%;
             padding: 16px;
@@ -95,19 +111,19 @@
             background: #fff;
             transition: box-shadow 0.2s;
         }
-        
+
         .input-group input:focus {
             outline: none;
             box-shadow: 4px 4px 0 #000;
         }
-        
+
         .button-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             margin-bottom: 32px;
         }
-        
+
         .btn {
             padding: 16px;
             border: 2px solid #000;
@@ -119,36 +135,36 @@
             background: #fff;
             color: #000;
         }
-        
+
         .btn:active {
             transform: translate(2px, 2px);
         }
-        
+
         .btn-primary {
             background: #000;
             color: #fff;
         }
-        
+
         .btn-primary:hover {
             box-shadow: 4px 4px 0 #000;
             transform: translate(-2px, -2px);
         }
-        
+
         .btn-primary:active {
             box-shadow: none;
             transform: translate(0, 0);
         }
-        
+
         .btn-secondary:hover {
             box-shadow: 4px 4px 0 #000;
             transform: translate(-2px, -2px);
         }
-        
+
         .btn-secondary:active {
             box-shadow: none;
             transform: translate(0, 0);
         }
-        
+
         .qrcode-container {
             text-align: center;
             margin-bottom: 24px;
@@ -159,22 +175,22 @@
             border: 2px dashed #ccc;
             padding: 20px;
         }
-        
+
         .qrcode-container canvas {
             border: 2px solid #000;
         }
-        
+
         .action-buttons {
             display: none;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             margin-bottom: 24px;
         }
-        
+
         .action-buttons.show {
             display: grid;
         }
-        
+
         .status {
             text-align: center;
             padding: 12px;
@@ -183,21 +199,21 @@
             font-size: 14px;
             display: none;
         }
-        
+
         .status.show {
             display: block;
         }
-        
+
         .status.success {
             background: #fff;
             border-color: #000;
         }
-        
+
         .status.error {
             background: #000;
             color: #fff;
         }
-        
+
         .install-prompt {
             background: #f5f5f5;
             border: 2px solid #000;
@@ -206,11 +222,11 @@
             text-align: center;
             display: none;
         }
-        
+
         .install-prompt.show {
             display: block;
         }
-        
+
         .install-btn {
             background: #000;
             color: #fff;
@@ -221,7 +237,7 @@
             font-size: 14px;
             font-weight: 600;
         }
-        
+
         .footer {
             text-align: center;
             padding: 20px 0;
@@ -229,7 +245,7 @@
             color: #999;
             margin-top: auto;
         }
-        
+
         .language-toggle {
             position: absolute;
             top: 20px;
@@ -240,7 +256,7 @@
             font-size: 14px;
             font-weight: 600;
         }
-        
+
         .lang-btn {
             background: none;
             border: none;
@@ -249,65 +265,63 @@
             color: #999;
             transition: color 0.2s;
         }
-        
+
         .lang-btn.active {
             color: #000;
             text-decoration: underline;
         }
-        
+
         .lang-btn:hover {
             color: #000;
         }
-        
+
         .lang-separator {
             color: #ccc;
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 10px;
             }
-            
+
             .header h1 {
                 font-size: 28px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="language-toggle">
         <button class="lang-btn active" onclick="setLanguage('pt')" id="langPt">PT-BR</button>
         <span class="lang-separator">|</span>
         <button class="lang-btn" onclick="setLanguage('en')" id="langEn">EN</button>
     </div>
-    
+
     <div class="container">
         <div class="install-prompt" id="installPrompt">
             <p style="margin-bottom: 8px; font-weight: 600;">📱 Instalar como App</p>
             <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Use offline e tenha acesso rápido</p>
             <button class="install-btn" id="installButton">Instalar</button>
         </div>
-        
+
         <div class="header">
             <h1>Open QR Code Generator</h1>
             <p>Gratuito • Open Source • Sem Anúncios</p>
             <a href="https://github.com/filipechgs/QRCodeGen" target="_blank" class="open-source">
                 <svg viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
                 </svg>
                 Ver no GitHub
             </a>
         </div>
-        
+
         <div class="input-group">
-            <input 
-                type="text" 
-                id="textInput" 
-                placeholder="Digite texto, URL ou qualquer conteúdo..."
-                autocomplete="off"
-            >
+            <input type="text" id="textInput" placeholder="Digite texto, URL ou qualquer conteúdo..."
+                autocomplete="off">
         </div>
-        
+
         <div class="button-group">
             <button class="btn btn-primary" onclick="generateQRCode()">
                 Gerar
@@ -316,7 +330,7 @@
                 Limpar
             </button>
         </div>
-        
+
         <div class="action-buttons" id="actionButtons">
             <button class="btn btn-secondary" onclick="downloadQRCode()">
                 💾 Download
@@ -325,15 +339,15 @@
                 📤 Compartilhar
             </button>
         </div>
-        
+
         <div class="qrcode-container" id="qrcodeContainer">
             <div style="color: #ccc; font-size: 14px;">
                 Seu QR Code aparecerá aqui
             </div>
         </div>
-        
+
         <div class="status" id="status"></div>
-        
+
         <div class="footer">
             Feito com ♥ • Totalmente gratuito e open source
         </div>
@@ -397,17 +411,17 @@
                 characters: 'characters'
             }
         };
-        
+
         let currentLang = 'pt';
-        
+
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
-            
+
             // Update buttons
             document.getElementById('langPt').classList.toggle('active', lang === 'pt');
             document.getElementById('langEn').classList.toggle('active', lang === 'en');
-            
+
             // Update content
             document.querySelector('.install-prompt p:first-child').textContent = t.installPrompt;
             document.querySelector('.install-prompt p:nth-child(2)').textContent = t.installDesc;
@@ -420,15 +434,15 @@
             document.querySelector('.btn-secondary').textContent = t.btnClear;
             document.querySelectorAll('.action-buttons .btn')[0].textContent = t.btnDownload;
             document.querySelectorAll('.action-buttons .btn')[1].textContent = t.btnShare;
-            
+
             const placeholder = document.querySelector('.qrcode-container > div');
             if (placeholder && !currentQRCodeCanvas) {
                 placeholder.textContent = t.qrPlaceholder;
             }
-            
+
             document.querySelector('.footer').textContent = t.footer;
         }
-        
+
         // PWA Installation
         let deferredPrompt;
         const installPrompt = document.getElementById('installPrompt');
@@ -442,14 +456,14 @@
 
         installButton.addEventListener('click', async () => {
             if (!deferredPrompt) return;
-            
+
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
-            
+
             if (outcome === 'accepted') {
                 installPrompt.classList.remove('show');
             }
-            
+
             deferredPrompt = null;
         });
 
@@ -468,9 +482,9 @@
             const input = document.getElementById('textInput');
             const container = document.getElementById('qrcodeContainer');
             const actionButtons = document.getElementById('actionButtons');
-            
+
             const text = input.value.trim();
-            
+
             if (!text) {
                 showStatus(t.errorEmpty, 'error');
                 return;
@@ -506,16 +520,16 @@
             const status = document.getElementById('status');
             const input = document.getElementById('textInput');
             const actionButtons = document.getElementById('actionButtons');
-            
+
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
-            
+
             const placeholder = document.createElement('div');
             placeholder.style.cssText = 'color: #ccc; font-size: 14px;';
             placeholder.textContent = t.qrPlaceholder;
             container.appendChild(placeholder);
-            
+
             actionButtons.classList.remove('show');
             status.classList.remove('show');
             input.value = '';
@@ -552,7 +566,7 @@
                 currentQRCodeCanvas.toBlob(async (blob) => {
                     const file = new File([blob], 'qrcode.png', { type: 'image/png' });
                     const text = document.getElementById('textInput').value;
-                    
+
                     if (navigator.share && navigator.canShare) {
                         try {
                             await navigator.share({
@@ -591,7 +605,7 @@
             const status = document.getElementById('status');
             status.textContent = message;
             status.className = `status ${type} show`;
-            
+
             if (type === 'success') {
                 setTimeout(() => {
                     status.classList.remove('show');
@@ -599,7 +613,7 @@
             }
         }
 
-        document.getElementById('textInput').addEventListener('keypress', function(e) {
+        document.getElementById('textInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 generateQRCode();
             }
@@ -619,4 +633,5 @@
     <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
+
 </html>

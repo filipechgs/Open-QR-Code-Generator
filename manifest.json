@@ -11,24 +11,30 @@
   "scope": "/",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%23000'/><rect x='20' y='20' width='60' height='60' fill='%23fff'/><rect x='112' y='20' width='60' height='60' fill='%23fff'/><rect x='20' y='112' width='60' height='60' fill='%23fff'/><rect x='30' y='30' width='40' height='40' fill='%23000'/><rect x='122' y='30' width='40' height='40' fill='%23000'/><rect x='30' y='122' width='40' height='40' fill='%23000'/></svg>",
+      "src": "favicon/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23000'/><rect x='50' y='50' width='160' height='160' fill='%23fff'/><rect x='302' y='50' width='160' height='160' fill='%23fff'/><rect x='50' y='302' width='160' height='160' fill='%23fff'/><rect x='80' y='80' width='100' height='100' fill='%23000'/><rect x='332' y='80' width='100' height='100' fill='%23000'/><rect x='80' y='332' width='100' height='100' fill='%23000'/></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "categories": ["utilities", "productivity"],
   "screenshots": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect width='540' height='720' fill='%23fff'/><text x='270' y='360' text-anchor='middle' font-size='24' fill='%23000'>QR Code Generator</text></svg>",
+      "src": "favicon/screenshot-540x720.png",
       "sizes": "540x720",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "form_factor": "narrow"
     }
   ],
@@ -40,9 +46,9 @@
       "url": "/",
       "icons": [
         {
-          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%23000'/><path d='M48 20v56M20 48h56' stroke='%23fff' stroke-width='8'/></svg>",
+          "src": "favicon/shortcut-96x96.png",
           "sizes": "96x96",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     }
