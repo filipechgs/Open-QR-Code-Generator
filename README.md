@@ -8,7 +8,7 @@ Um gerador de QR Code totalmente gratuito, open source e sem anúncios, desenvol
 
 ## 🚀 Sobre o Projeto
 
-Eu queria um gerador de QR Code que eu pudesse usar sem receio de ter meus dados rastreados ou deturpados quando quisesse, por exemplo, transformar uma chave PIX "copia e cola" em um QR Code. Testei a geração do código com com diversos chats de IA e obtive a melhor resposta combinando o Deepseek para o módulo de geração do QR Code e o Claude para o HTML e CSS. Exceto por este parágrafo, todo o README foi escrito pelo ChatGPT. 
+Eu queria um gerador de QR Code que eu pudesse usar sem receio de ter os meus dados rastreados ou deturpados quando quisesse, por exemplo, transformar uma chave PIX "copia e cola" em um QR Code. Testei a geração do código com diversos chats de IA e obtive a melhor resposta combinando o Deepseek para o módulo de geração do QR Code e o Claude para o HTML e CSS. Exceto por este parágrafo, todo o README foi escrito pelo ChatGPT.
 
 Este projeto é um gerador de QR Code moderno e responsivo que funciona como uma Progressive Web App (PWA), permitindo:
 
